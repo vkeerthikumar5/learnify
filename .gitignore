@@ -1,3 +1,6 @@
+# ====================
+# Laravel
+# ====================
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,3 +31,20 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# ====================
+# React
+# ====================
+/node_modules
+/build
+/.env
+/.cache
+
+# ====================
+# OS & Editor
+# ====================
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
