@@ -109,25 +109,5 @@ class SAController extends Controller
         'data' => $user
     ], 200);
 }
-public function stats()
-    {
-        $totalUsers = User::count();
-        $totalCompanies = Company::count();
-        $pendingActivations = Company::where('is_active', false)->count();
-        $totalJobs = Job::count();
-        $activeJobs = Job::where('status', '!=', 'archived')->count(); // assuming 'archived' is the status
-        $totalApplications = Application::count();
-
-        return response()->json([
-            'total_users' => $totalUsers-1,
-            'total_companies' => $totalCompanies,
-            'pending_activations' => $pendingActivations,
-            'total_jobs' => $totalJobs,
-            'active_jobs' => $activeJobs,
-            'total_applications' => $totalApplications,
-        ]);
-    }
-
 }
-
 

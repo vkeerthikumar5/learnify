@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import api from './api_r';
-
+import { Outlet } from 'react-router-dom';
 export default function ProtectedRoute({ children, role }) {
   const [authorized, setAuthorized] = useState(null);
 
@@ -27,5 +27,5 @@ export default function ProtectedRoute({ children, role }) {
 
   if (authorized === null) return <div>Loading...</div>;
   if (!authorized) return <Navigate to="/login" replace />;
-  return children;
+  return <Outlet/>
 }
