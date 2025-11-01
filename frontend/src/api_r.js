@@ -2,7 +2,6 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://learnify.rf.gd/public/proxy.php?endpoint=",
-  paramsSerializer: params => new URLSearchParams(params).toString(),
 });
 
 api.interceptors.request.use((config) => {
@@ -11,7 +10,7 @@ api.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
-  // Remove starting slash from the request URL if it exists
+  // Remove leading slash if exists
   if (config.url.startsWith("/")) {
     config.url = config.url.substring(1);
   }
