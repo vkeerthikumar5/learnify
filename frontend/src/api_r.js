@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://learnify-backend-q6he.onrender.com/public/api',
+  baseURL: 'https://learnify.rf.gd/public/api',
 });
 
 api.interceptors.request.use((config) => {
