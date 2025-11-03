@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://learnify.rf.gd/public/api',
+  baseURL: 'https://learnify.rf.gd/api',
 });
 
 api.interceptors.request.use((config) => {
